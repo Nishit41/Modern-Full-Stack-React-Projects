@@ -1,0 +1,23 @@
+Q1. what is mongodb?  
+No sql database
+
+Q2. What is a Document in MongoDB?
+A document is a single record in MongoDB.
+Stored in BSON (Binary JSON)-format (not human-readable form use to optimize the query)
+Similar to a row in a relational database
+Uses key–value pairs
+Each document has a unique _id
+
+## Note - BSON was created mainly for MongoDB to:
+Store data efficiently
+Support more data types than JSON
+Be fast to scan and retrieve 
+
+what is a collection ?
+collection is a group of Documents
+
+Database
+ └── Collection
+      └── Document
+
+

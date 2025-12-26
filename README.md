@@ -13,5 +13,11 @@ dev server out of the box.
 
 // Docker is a platform that allow us to package, manage, and run applications in loosely isolated environment called containers, Containers are lightweight, are isolated from each other and include all dependencies needed to run an application.  
 
-
 You build React → Docker builds image → Docker runs container → App runs
+
+## ch-3
+# objectives
+  Designing a backend service
+  Creating database schemas using Mongoose
+  Developing and testing service functions
+  Providing a REST API using Express
