@@ -1,14 +1,26 @@
 {
-  "name": "Blog",
+  "name": "blogs",
   "version": "1.0.0",
   "description": "Get a list of posts Get a single post Create a new post Update an existing post Delete an existing post",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "lint": "eslint src",
+    "prepare": "husky install",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
-  "author": "",
+  "author": "Nishit",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
     "mongoose": "^8.0.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2"
   }
 }
