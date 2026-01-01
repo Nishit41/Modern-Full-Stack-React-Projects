@@ -6,7 +6,6 @@
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "lint": "eslint src",
-    "prepare": "husky install",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
