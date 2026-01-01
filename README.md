@@ -23,8 +23,8 @@ You build React → Docker builds image → Docker runs container → App runs
   Providing a REST API using Express
 
 ## ch-4 Frontend 
-   Viewing a single post
-   Creating a new post
-   Listing posts
-   Filtering posts
+   Viewing a single post,
+   Creating a new post,
+   Listing posts,
+   Filtering posts,
    Sorting posts
