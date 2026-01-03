@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types'
-export function PostSorting({ fields = [] }) {
+export function PostSorting({ fields = [], orderValue,value, onOrderChange, onChange }) {
   return (
     <div>
       <label htmlFor='sortBy'>Sort By: </label>
-      <select name='sortBy' id='sortBy'>
+      <select name='sortBy' id='sortBy'
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+      >
         {fields.map((field) => (
           <option key={field} value={field}>
             {field}
@@ -12,7 +15,12 @@ export function PostSorting({ fields = [] }) {
       </select>
       {' / '}
       <label htmlFor='sortOrder'>Sort Order: </label>
-      <select name='sortOrder' id='sortOrder'>
+      <select
+        name='sortOrder'
+        id='sortOrder'
+        value={orderValue}
+        onChange={(e) => onOrderChange(e.target.value)}
+      >
         <option value={'ascending'}>ascending</option>
         <option value={'descending'}>descending</option>
       </select>

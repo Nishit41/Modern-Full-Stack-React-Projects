@@ -4,6 +4,7 @@ import { Post } from './Post.jsx'
 
 export const PostList=({ posts = [] })=>{
 
+
     return (
         <div>
           {posts.map((post) => (
