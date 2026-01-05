@@ -4,3 +4,12 @@ export const getPosts = async (queryParams) => {
     )
     return await response.json()
 }
+
+export const createPost = async (post) => {
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/posts`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(post),
+    })
+    return await response.json()
+}
