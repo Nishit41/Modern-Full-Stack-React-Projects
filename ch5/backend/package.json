@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Get a list of posts Get a single post Create a new post Update an existing post Delete an existing post",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "lint": "eslint src",
