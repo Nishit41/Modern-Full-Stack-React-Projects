@@ -65,7 +65,7 @@ RUN npm run build   # creates static production-ready files
 
 FROM nginx:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
-CMD ["nginx", "-g", "daemon off;"]
+CMD [""]
 
 What this does:
 
