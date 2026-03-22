@@ -7,8 +7,8 @@ dev server out of the box.
 ## ch-2
 # objectives
    Writing and running scripts with Node.js 
-   Introducing Docker, a platform for containers
-   Introducing MongoDB, a document database
+   ENVroducing Docker, a platform for containers
+   ENVroducing MongoDB, a document database
    Accessing the MongoDB database via Node.js
 
 // Docker is a platform that allow us to package, manage, and run applications in loosely isolated environment called containers, Containers are lightweight, are isolated from each other and include all dependencies needed to run an application.  
@@ -34,7 +34,7 @@ You build React → Docker builds image → Docker runs container → App runs
 
 You (frontend dev) work locally using Vite or npm start.
 
-Backend is already deployed in INT, so you point your API calls to the remote backend URL.
+Backend is already deployed in ENV, so you poENV your API calls to the remote backend URL.
 
 Dockerfile is optional here — you don’t need to containerize your frontend just to test locally.
 
@@ -75,13 +75,13 @@ Packages those files inside an Nginx container, so it can be served anywhere.
 
 CMD ensures Nginx runs automatically in the container.
 
-Result: A Docker image for the frontend that is ready to deploy to INT/staging/production.
+Result: A Docker image for the frotntend that is ready to deploy to ENV(Production/ custom environment).
 
 Step 3: Optional Docker Compose (multi-service)
 
 If the CI/CD pipeline only needs the frontend → Compose is not needed.
 
-If the pipeline needs multiple containers (e.g., frontend + DB + test backend) for integration or end-to-end tests, Compose is used to spin up all services together in an isolated environment.   
+If the pipeline needs multiple containers (e.g., frontend + DB + test backend) for ENVegration or end-to-end tests, Compose is used to spin up all services together in an isolated environment.   
 
 
 Step 3 — using Docker Compose in CI/CD — does require a pipeline configuration file like gitlab-ci.yml (if you’re using GitLab) or equivalent in other CI/CD tools (e.g., GitHub Actions, Jenkinsfile). Here’s why and how it fits in:
@@ -100,7 +100,7 @@ Commands to build your Docker image (docker build)
 
 Optional: spin up multiple containers using Docker Compose
 
-Example for frontend using Compose for integration tests:
+Example for frontend using Compose for ENVegration tests:
 
 stages:
   - build
@@ -128,19 +128,18 @@ test-frontend:
 deploy-frontend:
   stage: deploy
   script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker push my-frontend:latest
 
 2. Why you need this file
 
 Defines the pipeline: GitLab won’t know what to do with Dockerfiles or Compose otherwise.
 
-Runs Compose in CI/CD: Spins up multiple containers for testing or integration.
+Runs Compose in CI/CD: Spins up multiple containers for testing.
 
-Handles deployment: Tells GitLab how to push the built Docker image to a registry or deploy to INT.
+Handles deployment: Tells GitLab how to push the built Docker image to a registry or deploy to ENV.
 
 3. Key insight
 Component	Role
 Dockerfile	Builds a container image for a service (frontend/backend)
-Docker Compose	Orchestrates multiple containers for testing or integration
+Docker Compose	Orchestrates multiple containers for testing
 gitlab-ci.yml	Orchestrates the CI/CD pipeline itself (build → test → deploy)
